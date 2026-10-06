@@ -43,13 +43,44 @@ def solve_exercise(exercise_location : str, answer_location : str):
         elif exercise["task"] == "subtraction":
             # Solve polynomial arithmetic subtraction exercise
             pass
-        # et cetera
+        elif exercise["task"] == "multiplication":
+            # Solve polynomial arithmetic multiplication exercise
+            pass
+        elif exercise["task"] == "long_division":
+            # Solve polynomial arithmetic long divison exercise
+            pass
+        elif exercise["task"] == "extended_euclidean_algorithm":
+            # Solve polynomial arithmetic EEA exercise
+            pass
+        elif exercise["task"] == "irreducibility_check":
+            # Solve polynomial arithmetic irreducibility check exercise
+            pass
+        elif exercise["task"] == "irreducible_element_generation":
+            # Solve polynomial arithmetic irreducible element generation exercise
+            pass
     else: # exercise["type"] == "finite_field_arithmetic"
         # Check what task within the finite field arithmetic tasks we need to perform
         if exercise["task"] == "addition":
             # Solve finite field arithmetic addition exercise
             pass
-        # et cetera
+        elif exercise["task"] == "subtraction":
+            # Solve finite field arithmetic subtraction exercise
+            pass
+        elif exercise["task"] == "multiplication":
+            # Solve finite field arithmetic multiplication exercise
+            pass
+        elif exercise["task"] == "division":
+            # Solve finite field arithmetic division exercise
+            pass
+        elif exercise["task"] == "inversion":
+            # Solve finite field arithmetic inversion exercise
+            pass
+        elif exercise["task"] == "primitivity_check":
+            # Solve finite field arithmetic primitivity check exercise
+            pass
+        elif exercise["task"] == "primitive_element_generation":
+            # Solve finite field arithmetic primitive element generation exercise
+            pass
 
 
     # Open file at answer_location for writing, creating the file if it does not exist yet
