@@ -8,10 +8,10 @@
 # group_number 
 #
 # Author names and student IDs:
-# author_name_1 (author_student_ID_1) 
-# author_name_2 (author_student_ID_2)
-# author_name_3 (author_student_ID_3)
-# author_name_4 (author_student_ID_4)
+# Oana Alexandra Anuta (2309025) 
+# Diana Dumitrescu (2246767)
+# Sara-Maria Dumitrescu (2310007)
+# Alexandru Radu (2304554)
 ##
 
 # Import built-in json library for handling input/output 
