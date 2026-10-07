@@ -21,7 +21,6 @@ from poly_addition import *
 from poly_subtraction import *
 
 
-
 def solve_exercise(exercise_location : str, answer_location : str):
     """
     solves an exercise specified in the file located at exercise_location and
@@ -44,6 +43,7 @@ def solve_exercise(exercise_location : str, answer_location : str):
     # Check type of exercise
     if exercise["type"] == "polynomial_arithmetic":
         # Check what task within the polynomial arithmetic tasks we need to perform
+        
         if exercise["task"] == "addition":
             # Solve polynomial arithmetic addition exercise
             f = exercise["f"]
@@ -96,6 +96,7 @@ def solve_exercise(exercise_location : str, answer_location : str):
         
     else: # exercise["type"] == "finite_field_arithmetic"
         # Check what task within the finite field arithmetic tasks we need to perform
+        # All finite field arithmetic exercises specify a polynomial modulus
         poly_mod = exercise["polynomial_modulus"]
         
         if exercise["task"] == "addition":
