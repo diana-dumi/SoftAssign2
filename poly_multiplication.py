@@ -1,4 +1,4 @@
-def multiplication(f, g, p):
+def poly_multiply(f, g, p):
     # Multiplication of two polinomials, mod p
     # Result will have degree at most len(f) + len(g) - 1
     h = [0] * (len(f) + len(g) - 1)
