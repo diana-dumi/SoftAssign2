@@ -19,6 +19,7 @@ import json
 # Import functions defined in other files
 from poly_addition import *
 from poly_subtraction import *
+from multiplication import *
 
 
 def solve_exercise(exercise_location : str, answer_location : str):
@@ -66,8 +67,10 @@ def solve_exercise(exercise_location : str, answer_location : str):
             # Solve polynomial arithmetic multiplication exercise
             f = exercise["f"]
             g = exercise["g"]
+            z = multiplication(f, g, int_mod)
             
-            pass
+            # Format answer
+            z = {"answer":z}
         
         elif exercise["task"] == "long_division":
             # Solve polynomial arithmetic long divison exercise
