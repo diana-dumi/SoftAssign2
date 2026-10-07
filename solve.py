@@ -16,6 +16,9 @@
 
 # Import built-in json library for handling input/output 
 import json
+# Import functions defined in other files
+from poly_addition import *
+from poly_subtraction import *
 
 
 
@@ -33,53 +36,111 @@ def solve_exercise(exercise_location : str, answer_location : str):
         
 
     ### Parse and solve ###
+    global int_mod
+    int_mod = exercise["integer_modulus"]
+    
+    z = []
 
     # Check type of exercise
     if exercise["type"] == "polynomial_arithmetic":
         # Check what task within the polynomial arithmetic tasks we need to perform
         if exercise["task"] == "addition":
             # Solve polynomial arithmetic addition exercise
-            pass
+            f = exercise["f"]
+            g = exercise["g"]
+            z = poly_add(f, g, int_mod)
+            
+            # Format answer
+            z = {"answer":z}
+            
         elif exercise["task"] == "subtraction":
             # Solve polynomial arithmetic subtraction exercise
-            pass
+            f = exercise["f"]
+            g = exercise["g"]
+            z = poly_sub(f, g, int_mod)
+            
+            # Format answer
+            z = {"answer":z}
+            
         elif exercise["task"] == "multiplication":
             # Solve polynomial arithmetic multiplication exercise
+            f = exercise["f"]
+            g = exercise["g"]
+            
             pass
+        
         elif exercise["task"] == "long_division":
             # Solve polynomial arithmetic long divison exercise
+            f = exercise["f"]
+            g = exercise["g"]
+            
             pass
+        
         elif exercise["task"] == "extended_euclidean_algorithm":
             # Solve polynomial arithmetic EEA exercise
+            f = exercise["f"]
+            g = exercise["g"]
+            
             pass
+        
         elif exercise["task"] == "irreducibility_check":
             # Solve polynomial arithmetic irreducibility check exercise
+            f = exercise["f"]
+                        
             pass
+        
         elif exercise["task"] == "irreducible_element_generation":
             # Solve polynomial arithmetic irreducible element generation exercise
+            
             pass
+        
     else: # exercise["type"] == "finite_field_arithmetic"
         # Check what task within the finite field arithmetic tasks we need to perform
+        poly_mod = exercise["polynomial_modulus"]
+        
         if exercise["task"] == "addition":
             # Solve finite field arithmetic addition exercise
+            f = exercise["f"]
+            g = exercise["g"]
+            
             pass
+        
         elif exercise["task"] == "subtraction":
             # Solve finite field arithmetic subtraction exercise
+            f = exercise["f"]
+            g = exercise["g"]
+            
             pass
+        
         elif exercise["task"] == "multiplication":
             # Solve finite field arithmetic multiplication exercise
+            f = exercise["f"]
+            g = exercise["g"]
+            
             pass
+        
         elif exercise["task"] == "division":
             # Solve finite field arithmetic division exercise
+            f = exercise["f"]
+            g = exercise["g"]
+            
             pass
+        
         elif exercise["task"] == "inversion":
             # Solve finite field arithmetic inversion exercise
+            f = exercise["f"]
+            
             pass
+        
         elif exercise["task"] == "primitivity_check":
             # Solve finite field arithmetic primitivity check exercise
+            f = exercise["f"]
+            
             pass
+        
         elif exercise["task"] == "primitive_element_generation":
             # Solve finite field arithmetic primitive element generation exercise
+            
             pass
 
 
@@ -87,7 +148,7 @@ def solve_exercise(exercise_location : str, answer_location : str):
     # (and overwriting it if it does already exist).
     with open(answer_location, "w") as answer_file:
         # Serialize Python answer data (stored in answer) to JSON answer data and write it to answer_file
-        json.dump(answer, answer_file, indent=4)
+        json.dump(z, answer_file, indent=4)
 
 # You can call your function from here
 # Please do not *run* code outside this block
