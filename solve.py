@@ -20,6 +20,7 @@ import json
 from poly_addition import *
 from poly_subtraction import *
 from poly_multiplication import *
+from long_division import *
 
 
 def solve_exercise(exercise_location : str, answer_location : str):
@@ -76,8 +77,10 @@ def solve_exercise(exercise_location : str, answer_location : str):
             # Solve polynomial arithmetic long divison exercise
             f = exercise["f"]
             g = exercise["g"]
+            q, r = long_div(f, g, int_mod)
             
-            pass
+            # Format answer
+            z = {"answer-q": q, "answer-r": r}
         
         elif exercise["task"] == "extended_euclidean_algorithm":
             # Solve polynomial arithmetic EEA exercise
