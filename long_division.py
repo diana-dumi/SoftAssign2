@@ -25,4 +25,4 @@ def long_div(f, g, p):
             
         remove_leading_zeros(r)
         
-    return remove_leading_zeros(q), r
+    return remove_leading_zeros(q) or [0], r or [0]

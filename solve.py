@@ -21,7 +21,9 @@ from poly_addition import *
 from poly_subtraction import *
 from poly_multiplication import *
 from long_division import *
-
+from eea import *
+from irred_check import *
+from generate_irreducible import *
 
 def solve_exercise(exercise_location : str, answer_location : str):
     """
@@ -61,7 +63,6 @@ def solve_exercise(exercise_location : str, answer_location : str):
             g = exercise["g"]
             z = poly_sub(f, g, int_mod)
             
-            # Format answer
             z = {"answer":z}
             
         elif exercise["task"] == "multiplication":
@@ -70,7 +71,6 @@ def solve_exercise(exercise_location : str, answer_location : str):
             g = exercise["g"]
             z = poly_multiply(f, g, int_mod)
             
-            # Format answer
             z = {"answer":z}
         
         elif exercise["task"] == "long_division":
@@ -79,7 +79,6 @@ def solve_exercise(exercise_location : str, answer_location : str):
             g = exercise["g"]
             q, r = long_div(f, g, int_mod)
             
-            # Format answer
             z = {"answer-q": q, "answer-r": r}
         
         elif exercise["task"] == "extended_euclidean_algorithm": 
@@ -87,19 +86,23 @@ def solve_exercise(exercise_location : str, answer_location : str):
             f = exercise["f"]
             g = exercise["g"]
             a, b, gcd = eea(f, g, int_mod)
-            # Format answer
+            
             z = {"answer-a": a, "answer-b": b, "answer-gcd": gcd}
         
         elif exercise["task"] == "irreducibility_check":
             # Solve polynomial arithmetic irreducibility check exercise
             f = exercise["f"]
-                        
-            pass
+            a = irred_check(f, int_mod)
+            
+            z = {"answer": a}
         
         elif exercise["task"] == "irreducible_element_generation":
             # Solve polynomial arithmetic irreducible element generation exercise
-            
-            pass
+            n = exercise["degree"]
+            f = gen_irred(n, int_mod)
+
+            z = {"answer": f}
+
         
     else: # exercise["type"] == "finite_field_arithmetic"
         # Check what task within the finite field arithmetic tasks we need to perform
@@ -162,4 +165,4 @@ def solve_exercise(exercise_location : str, answer_location : str):
 # Please do not *run* code outside this block
 # You can however define other functions or constants
 if __name__ == '__main__':
-    solve_exercise('Simple/Exercises/exercise0.json', 'Simple/Answers/answer0.json')
+    solve_exercise('exercise.json', 'answer.json')
