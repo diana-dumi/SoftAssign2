@@ -24,6 +24,8 @@ from long_division import *
 from eea import *
 from irred_check import *
 from generate_irreducible import *
+from ff_addition import *
+from ff_subtraction import *
 
 def solve_exercise(exercise_location : str, answer_location : str):
     """
@@ -113,15 +115,17 @@ def solve_exercise(exercise_location : str, answer_location : str):
             # Solve finite field arithmetic addition exercise
             f = exercise["f"]
             g = exercise["g"]
-            
-            pass
+            z = ff_add(f, g, int_mod, poly_mod)
+
+            z = {"answer": z}
         
         elif exercise["task"] == "subtraction":
             # Solve finite field arithmetic subtraction exercise
             f = exercise["f"]
             g = exercise["g"]
+            z = ff_sub(f, g, int_mod, poly_mod)
             
-            pass
+            z = {"answer": z}
         
         elif exercise["task"] == "multiplication":
             # Solve finite field arithmetic multiplication exercise
@@ -165,4 +169,4 @@ def solve_exercise(exercise_location : str, answer_location : str):
 # Please do not *run* code outside this block
 # You can however define other functions or constants
 if __name__ == '__main__':
-    solve_exercise('exercise.json', 'answer.json')
+    solve_exercise('Exercises/Realistic/Exercises/exercise10.json', 'answer.json')
