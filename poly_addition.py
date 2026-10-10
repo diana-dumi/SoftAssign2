@@ -17,6 +17,6 @@ def poly_add(f, g, p):
         
     for i in range(min(len(f), len(g)), len(g)):
         # Add remaining coefficients of g, if deg(g) > deg(f)
-            h.append(g[i])
+        h.append(g[i])
         
     return h

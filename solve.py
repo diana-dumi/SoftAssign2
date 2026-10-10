@@ -82,12 +82,13 @@ def solve_exercise(exercise_location : str, answer_location : str):
             # Format answer
             z = {"answer-q": q, "answer-r": r}
         
-        elif exercise["task"] == "extended_euclidean_algorithm":
+        elif exercise["task"] == "extended_euclidean_algorithm": 
             # Solve polynomial arithmetic EEA exercise
             f = exercise["f"]
             g = exercise["g"]
-            
-            pass
+            a, b, gcd = eea(f, g, int_mod)
+            # Format answer
+            z = {"answer-a": a, "answer-b": b, "answer-gcd": gcd}
         
         elif exercise["task"] == "irreducibility_check":
             # Solve polynomial arithmetic irreducibility check exercise
