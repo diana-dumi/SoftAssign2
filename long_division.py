@@ -1,6 +1,6 @@
 def remove_leading_zeros(f):
     # Remove leading zero coefficients
-    while f and f[-1] == 0:
+    while len(f) > 1 and f[-1] == 0:
         f.pop()
         
     return f
