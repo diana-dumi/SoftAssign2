@@ -1,3 +1,5 @@
+from long_division import remove_leading_zeros
+
 def poly_add(f, g, p):
     # Addition of two polynomials, mod p
     h = []
@@ -19,4 +21,4 @@ def poly_add(f, g, p):
         # Add remaining coefficients of g, if deg(g) > deg(f)
         h.append(g[i])
         
-    return h
+    return remove_leading_zeros(h)

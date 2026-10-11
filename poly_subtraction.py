@@ -1,3 +1,5 @@
+from long_division import remove_leading_zeros
+
 def poly_sub(f, g, p):
     # Subtraction of two polynomials, mod p
     h = []
@@ -25,4 +27,4 @@ def poly_sub(f, g, p):
         
         h.append(x)
             
-    return h
+    return remove_leading_zeros(h)

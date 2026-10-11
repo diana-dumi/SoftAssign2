@@ -7,8 +7,6 @@ def ff_add(f, g, p, h):
     # Add the polynomials mod p
     sum_poly = poly_add(f, g, p)
 
-    sum_poly = remove_leading_zeros(sum_poly)
-
     if (len(f) < len(h)) and (len(g) < len(h)):
         # If the degree of the sum is less than the degree of h, we can return the sum
         return sum_poly
