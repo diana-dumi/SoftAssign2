@@ -8,13 +8,13 @@ def remove_leading_zeros(f):
 def long_div(f, g, p):
     # Long division of two polynomials, mod p
     # If g is the zero polynomial, division by 0 not possible
-    if len(g) == 0:
+    if len(g) == 0 or g == [0]:
         return None
     
     q = [0] * (len(f) - len(g) + 1)
     r = f[:]
     
-    while len(r) >= len(g):
+    while r != [0] and len(r) >= len(g):
         shift = len(r) - len(g) # len(f) = deg(f) + 1, here we want deg(r) - deg(g)
         coef = (r[-1] * pow(g[-1], -1, p)) % p
         

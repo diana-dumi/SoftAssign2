@@ -16,7 +16,7 @@ def eea(f, g, p):
     y = []
     u = []
     
-    while len(g) > 0:
+    while len(g) > 0 and g != [0]:
         q, r = long_div(f, g, p)
         
         f = g
