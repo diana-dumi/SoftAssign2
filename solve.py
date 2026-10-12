@@ -28,6 +28,7 @@ from ff_addition import *
 from ff_subtraction import *
 from ff_multiplication import *
 from ff_inversion import *
+from ff_division import *
 
 def solve_exercise(exercise_location : str, answer_location : str):
     """
@@ -141,8 +142,9 @@ def solve_exercise(exercise_location : str, answer_location : str):
             # Solve finite field arithmetic division exercise
             f = exercise["f"]
             g = exercise["g"]
+            z = ff_divide(f, g, int_mod, poly_mod)
             
-            pass
+            z = {"answer": z}
         
         elif exercise["task"] == "inversion":
             # Solve finite field arithmetic inversion exercise
@@ -173,4 +175,4 @@ def solve_exercise(exercise_location : str, answer_location : str):
 # Please do not *run* code outside this block
 # You can however define other functions or constants
 if __name__ == '__main__':
-    solve_exercise('Exercises/Realistic/Exercises/exercise11.json', 'answer.json')
+    solve_exercise('Exercises/Realistic/Exercises/exercise8.json', 'answer.json')
