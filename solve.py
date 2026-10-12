@@ -27,6 +27,7 @@ from generate_irreducible import *
 from ff_addition import *
 from ff_subtraction import *
 from ff_multiplication import *
+from ff_inversion import *
 
 def solve_exercise(exercise_location : str, answer_location : str):
     """
@@ -146,8 +147,9 @@ def solve_exercise(exercise_location : str, answer_location : str):
         elif exercise["task"] == "inversion":
             # Solve finite field arithmetic inversion exercise
             f = exercise["f"]
+            z = ff_inverse(f, int_mod, poly_mod)
             
-            pass
+            z = {"answer": z}
         
         elif exercise["task"] == "primitivity_check":
             # Solve finite field arithmetic primitivity check exercise
@@ -171,4 +173,4 @@ def solve_exercise(exercise_location : str, answer_location : str):
 # Please do not *run* code outside this block
 # You can however define other functions or constants
 if __name__ == '__main__':
-    solve_exercise('Exercises/Realistic/Exercises/exercise12.json', 'answer.json')
+    solve_exercise('Exercises/Realistic/Exercises/exercise11.json', 'answer.json')
