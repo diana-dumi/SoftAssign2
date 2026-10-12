@@ -1,5 +1,5 @@
 from eea import eea
-from poly_mod import poly_mod
+from poly_mod import poly_modulo
 
 def ff_inverse(f, p, h):
 
@@ -14,4 +14,4 @@ def ff_inverse(f, p, h):
         return None
     else:
         a = eea_list[0]
-        return poly_mod(a, h, p)
+        return poly_modulo(a, h, p)
