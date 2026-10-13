@@ -29,6 +29,7 @@ from ff_subtraction import *
 from ff_multiplication import *
 from ff_inversion import *
 from ff_division import *
+from ff_prim_check import *
 
 def solve_exercise(exercise_location : str, answer_location : str):
     """
@@ -156,9 +157,10 @@ def solve_exercise(exercise_location : str, answer_location : str):
         elif exercise["task"] == "primitivity_check":
             # Solve finite field arithmetic primitivity check exercise
             f = exercise["f"]
-            
-            pass
-        
+            z = primitivity_check(f, int_mod, poly_mod)
+
+            z = {"answer": z}
+
         elif exercise["task"] == "primitive_element_generation":
             # Solve finite field arithmetic primitive element generation exercise
             
