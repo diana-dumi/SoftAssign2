@@ -1,4 +1,4 @@
-from poly_mod import poly_modulo
+from poly_modulo import poly_modulo
 from poly_multiplication import poly_multiply
 
 def ff_multiply(f, g, p, h):

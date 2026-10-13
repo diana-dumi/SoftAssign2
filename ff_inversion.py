@@ -1,5 +1,5 @@
 from eea import eea
-from poly_mod import poly_modulo
+from poly_modulo import poly_modulo
 
 def ff_inverse(f, p, h):
 
