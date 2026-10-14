@@ -1,10 +1,10 @@
-from poly_modulo import poly_modulo
+from long_division import *
 from poly_multiplication import poly_multiply
 
 def ff_multiply(f, g, p, h):
     #first multiply the two polynomials
     product = poly_multiply(f,g,p)
     #reduce the result to be modulo h
-    reduced = poly_modulo(product, h, p)
+    _, reduced = long_div(product, h, p)
 
     return reduced

@@ -1,5 +1,5 @@
 from eea import eea
-from poly_modulo import poly_modulo
+from long_division import *
 
 def ff_inverse(f, p, h):
 
@@ -13,5 +13,5 @@ def ff_inverse(f, p, h):
     if gcd != [1]:
         return None
     else:
-        a = eea_list[0]
-        return poly_modulo(a, h, p)
+        _, a = long_div(eea_list[0], h, p)
+        return a
