@@ -11,11 +11,19 @@ def eea(f, g, p):
     if f == [0] and g == [0]:
         return None
 
+    # f = [0], g != [0]
     if f == [0]:
-        return [0], [1], g
+        inv = pow(g[-1], -1, p)
+        b = [inv]
+        gcd = remove_leading_zeros(poly_multiply(g, b, p))
+        return [0], b, gcd or [0]
 
+    # f != [0], g = [0]
     if g == [0]:
-        return [1], [0], f
+        inv = pow(f[-1], -1, p)
+        a = [inv]
+        gcd = remove_leading_zeros(poly_multiply(f, a, p))
+        return a, [0], gcd or [0]
     
     x = [1]
     v = [1]
