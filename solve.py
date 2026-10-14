@@ -4,7 +4,7 @@
 # solve.py
 #
 #
-# Group number:
+# Group number: 36
 # group_number 
 #
 # Author names and student IDs:
@@ -30,6 +30,7 @@ from ff_multiplication import *
 from ff_inversion import *
 from ff_division import *
 from ff_prim_check import *
+from ff_generate_prim import *
 
 def solve_exercise(exercise_location : str, answer_location : str):
     """
@@ -163,8 +164,9 @@ def solve_exercise(exercise_location : str, answer_location : str):
 
         elif exercise["task"] == "primitive_element_generation":
             # Solve finite field arithmetic primitive element generation exercise
-            
-            pass
+
+            z = primitive_element(int_mod, poly_mod)
+            z = {"answer": z}
 
 
     # Open file at answer_location for writing, creating the file if it does not exist yet
