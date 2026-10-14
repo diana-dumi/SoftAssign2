@@ -179,4 +179,5 @@ def solve_exercise(exercise_location : str, answer_location : str):
 # Please do not *run* code outside this block
 # You can however define other functions or constants
 if __name__ == '__main__':
-    solve_exercise('exercise.json', 'answer.json')
+    solve_exercise('Exercises/Realistic/Exercises/exercise0.json', 'answer.json')
+    

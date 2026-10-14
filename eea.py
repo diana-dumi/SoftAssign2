@@ -10,6 +10,12 @@ def eea(f, g, p):
     # gcd(0, 0) is undefined
     if f == [0] and g == [0]:
         return None
+
+    if f == [0]:
+        return [0], [1], g
+
+    if g == [0]:
+        return [1], [0], f
     
     x = [1]
     v = [1]
