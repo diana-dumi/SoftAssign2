@@ -1,3 +1,5 @@
+from long_division import remove_leading_zeros
+
 def poly_multiply(f, g, p):
     # Multiplication of two polinomials, mod p
     # Result will have degree at most len(f) + len(g) - 1
@@ -7,4 +9,4 @@ def poly_multiply(f, g, p):
         for i2, j2 in enumerate(g):
             h[i1 + i2] = (h[i1 + i2] + j1 * j2) % p
 
-    return h
+    return remove_leading_zeros(h)

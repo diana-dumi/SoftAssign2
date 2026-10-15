@@ -84,17 +84,23 @@ def solve_exercise(exercise_location : str, answer_location : str):
             # Solve polynomial arithmetic long divison exercise
             f = exercise["f"]
             g = exercise["g"]
-            q, r = long_div(f, g, int_mod)
-            
-            z = {"answer-q": q, "answer-r": r}
+            res = long_div(f, g, int_mod)
+
+            if res is None:
+                z = {"answer-q": None, "answer-r": None}
+            else:
+                z = {"answer-q": res[0], "answer-r": res[1]}
         
         elif exercise["task"] == "extended_euclidean_algorithm": 
             # Solve polynomial arithmetic EEA exercise
             f = exercise["f"]
             g = exercise["g"]
-            a, b, gcd = eea(f, g, int_mod)
-            
-            z = {"answer-a": a, "answer-b": b, "answer-gcd": gcd}
+            res = eea(f, g, int_mod)
+
+            if res is None:
+                z = {"answer-a": None, "answer-b": None, "answer-gcd": None}
+            else:
+                z = {"answer-a": res[0], "answer-b": res[1], "answer-gcd": res[2]}
         
         elif exercise["task"] == "irreducibility_check":
             # Solve polynomial arithmetic irreducibility check exercise
@@ -179,5 +185,5 @@ def solve_exercise(exercise_location : str, answer_location : str):
 # Please do not *run* code outside this block
 # You can however define other functions or constants
 if __name__ == '__main__':
-    solve_exercise('Exercises/Realistic/Exercises/exercise0.json', 'answer.json')
+    solve_exercise('Simple/Exercises/exercise0.json', 'Simple/Answers/answer0.json')
     
