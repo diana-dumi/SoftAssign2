@@ -3,10 +3,7 @@ from poly_multiplication import *
 from long_division import *
 
 def eea(f, g, p):
-    # Extended Euclidean algorithm of two polynomials, mod p
-    #f = remove_leading_zeros([c % p for c in f])
-    #g = remove_leading_zeros([c % p for c in g])
-    
+    # Extended Euclidean algorithm of two polynomials, mod p    
     # gcd(0, 0) is undefined
     if f == [0] and g == [0]:
         return None
